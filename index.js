@@ -4,11 +4,11 @@
     // let array = [2, 1, 5, 0, 3, 4, 7, 2, 3, 1, 0];
     let watterArray = [];
     let calculation = 0;
-    const LENGTH = groundArray.length;
-    let container = document.getElementById('container');
-    let resultSpan = document.getElementById('result');
-    let waterColor = '#4C87E7';
-    let groundColor = '#434343';
+    const arrayLength = groundArray.length;
+    const container = document.getElementById('container');
+    const resultSpan = document.getElementById('result');
+    const waterColor = '#4C87E7';
+    const groundColor = '#434343';
 
     resultSpan.textContent = calculateWatter(groundArray);
     drawGround(groundArray, watterArray);
@@ -16,14 +16,14 @@
     function calculateWatter(groundArray) {
         let result = 0;
 
-        for (let i = 0; i < LENGTH; i++) {
+        for (let i = 0; i < arrayLength; i++) {
             let maxLeft = 0, maxRight = 0;
 
             for (let j = i; j >= 0; j--) {
                 maxLeft = Math.max(maxLeft, groundArray[j]);
             }
 
-            for (let j = i; j < LENGTH; j++) {
+            for (let j = i; j < arrayLength; j++) {
                 maxRight = Math.max(maxRight, groundArray[j]);
             }
 
@@ -35,7 +35,7 @@
     }
 
     function drawGround(groundArray, watterArray) {
-        for (let i = 0; i < LENGTH; i++) {
+        for (let i = 0; i < arrayLength; i++) {
             let wrapper = document.createElement('div');
             let watter = document.createElement('div');
             let ground = document.createElement('div');
